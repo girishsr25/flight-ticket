@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+    form
+    {
+        border: 2px solid #000;
+        padding: 20px;
+        margin-top: 10%;
+        border-radius: 10px;
+    }
+    h1
+    {
+        text-align: center;
+    }
+</style>
+<form action="">
+    <h1>Add Flight</h1>
+    <!-- create input to get from, to, date and time -->
+    <div>
+        <label for="name">Flight Name</label>
+        <input type="text" class="form-control" name="name" id="name" placeholder="Flight Name">
+    </div>
+
+    <div class="form-group">
+        <label for="from">From</label>
+        <input type="text" class="form-control" id="from" placeholder="From">
+    </div>
+    <div class="form-group">
+        <label for="to">To</label>
+        <input type="text" class="form-control" id="to" placeholder="To">
+    </div>
+    <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" class="form-control" id="date" placeholder="Date">
+    </div>
+    <div class="form-group">
+        <label for="time">Time</label>
+        <input type="time" class="form-control" id="time" placeholder="Time">
+    </div>
+    <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" class="form-control" id="price" placeholder="Price">
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary" onclick = "create_flight();">Submit</button>
+
+    
+
+</form>
+<script src="{{ url_for('static', filename='js/script.js')}}"></script>
+{% endblock %}

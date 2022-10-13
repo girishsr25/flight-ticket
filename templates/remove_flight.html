@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    #results {
+        display: flex;
+        flex-direction: row;
+        gap : 10px;
+        flex-wrap: wrap;
+    }
+    #results > div {
+        flex-basis: 30%;
+    }
+    h1{
+        /* center */
+        text-align: center;
+    }
+</style>
+<h1>Remove Flights</h1>
+<div class="flight">
+    <label for="from">From:</label>
+    <input type="text" id="from" name="from">
+    <label for="to">To:</label>
+    <input type="text" id="to" name="to">
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date">
+    <button onclick = "search(`remove`);">Search</button>
+</div>
+<br><br><br><br>
+<div id="results">
+    
+</div>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}
